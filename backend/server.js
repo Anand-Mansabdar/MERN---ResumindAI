@@ -15,7 +15,12 @@ const PORT = process.env.PORT;
 
 // Middlewares
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://resumindai-wrtx.onrender.com",
+    credentials: true,
+  })
+);
 await connectDB();
 
 // App Routes
