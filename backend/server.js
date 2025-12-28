@@ -17,10 +17,13 @@ const PORT = process.env.PORT;
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://resumindai-wrtx.onrender.com",
+    origin: "https://resumindai-frontend.onrender.com",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
   })
 );
+
+app.options("*", cors());
 await connectDB();
 
 // App Routes
